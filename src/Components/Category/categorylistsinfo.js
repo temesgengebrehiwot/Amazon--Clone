@@ -17,7 +17,7 @@ const categoryImages = [
 	},
 	{
 		title: "Women's Clothing",
-		name: "electronics",
+		name: "women's clothing",
 		imgLink: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
 	},
 ];

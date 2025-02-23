@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Header.module.css";
+import {Link} from "react-router";
 
 import {BsSearch} from "react-icons/bs";
 import {BiCart} from "react-icons/bi";
@@ -13,12 +14,12 @@ const Header = () => {
 				<div className={styles.header_container}>
 					{/* logo */}
 					<div className={styles.logo_container}>
-						<a href="/">
+						<Link to="/">
 							<img
 								src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
 								alt="amazon logo"
 							/>
-						</a>
+						</Link>
 
 						{/* delivery to */}
 						<div className={styles.delivery}>
@@ -42,7 +43,7 @@ const Header = () => {
 						</div>
 					</div>
 					<div className={styles.order_container}>
-						<a href="" className={styles.language}>
+						<Link to="/language" className={styles.language}>
 							<img
 								width={60}
 								src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg/1920px-Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg.png"
@@ -51,25 +52,25 @@ const Header = () => {
 							<select name="" id="">
 								<option value="">EN</option>
 							</select>
-						</a>
+						</Link>
 
-						<a href="">
+						<Link to="/auth">
 							<div>
 								<p>Sign In</p>
 								<span>Acount & Lists</span>
 							</div>
-						</a>
-						<a href="">
+						</Link>
+						<Link to="/orders">
 							<div>
 								<p>Returns</p>
 								<span>& Orders</span>
 							</div>
-						</a>
+						</Link>
 						{/* cart */}
-						<a href="/cart" className={styles.cart}>
+						<Link to="/cart" className={styles.cart}>
 							<BiCart size={35} />
 							<span>0</span>
-						</a>
+						</Link>
 					</div>
 				</div>
 			</header>

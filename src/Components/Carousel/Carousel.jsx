@@ -6,7 +6,7 @@ import {Carousel} from "react-responsive-carousel";
 
 const CarouselEffect = () => {
 	return (
-		<div>
+		<div className={styles.CarouselContainer}>
 			<Carousel
 				autoplay={true}
 				infiniteLoop={true}

@@ -4,6 +4,9 @@
 	box-sizing: border-box;
 	/* font-family: sans-serif, Arial; */
 }
+body {
+	margin-top: 110px;
+}
 :root {
 	--primary-color: #febd69;
 	--primary-shade: #d49644;

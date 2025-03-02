@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import styles from "./Header.module.css";
 import {Link} from "react-router";
-
+import {auth} from "../../Utility/firebase";
 import {BsSearch} from "react-icons/bs";
 import {BiCart} from "react-icons/bi";
 import {SlLocationPin} from "react-icons/sl";
@@ -9,7 +9,7 @@ import LowerHeader from "./LowerHeader";
 import {DataContext} from "../DataProvider/DataProvider";
 
 const Header = () => {
-	const [{basket}, dispatch] = useContext(DataContext);
+	const [{user, basket}, dispatch] = useContext(DataContext);
 	const totalItem = basket?.reduce((amount, item) => {
 		return item.amount + amount;
 	}, 0);
@@ -66,10 +66,21 @@ const Header = () => {
 									</select>
 								</Link>
 
-								<Link to="/auth">
+								<Link to={!user && "/auth"}>
 									<div>
-										<p>Sign In</p>
-										<span>Acount & Lists</span>
+										<div>
+											{user ? (
+												<>
+													<p>Hello {user?.email.split("@")[0]}</p>
+													<span onClick={() => auth.signOut()}>Sign Out</span>
+												</>
+											) : (
+												<>
+													<p>Sign In</p>
+													<span>Acount & Lists</span>
+												</>
+											)}
+										</div>
 									</div>
 								</Link>
 								<Link to="/orders">

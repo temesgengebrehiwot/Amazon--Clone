@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router";
 import axios from "axios";
-import {productUrl} from "../../API/endpoint";
+import {productUrl} from "../../Api/endPoint";
 import LayOut from "../../Components/LayOut/LayOut";
 import styles from "./Result.module.css";
 import ProductCard from "../../Components/Product/ProductCard";

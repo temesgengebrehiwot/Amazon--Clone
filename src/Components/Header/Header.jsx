@@ -55,7 +55,7 @@ const Header = () => {
 								</div>
 							</div>
 							<div className={styles.order_container}>
-								<Link to="/language" className={styles.language}>
+								<Link to="" className={styles.language}>
 									<img
 										width={60}
 										src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg/1920px-Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg.png"

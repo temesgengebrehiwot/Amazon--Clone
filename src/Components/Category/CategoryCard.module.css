@@ -10,7 +10,7 @@
 	object-fit: contain;
 	max-height: 250px;
 	padding: 0 10px;
-  margin: 10px 0;
+	margin: 10px 0;
 }
 
 .category a {
@@ -28,6 +28,10 @@
 	position: relative;
 	margin-top: -10px;
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	max-width: 1600px;
 	place-items: center;
+	row-gap: 40px;
+	margin-left: auto;
+	margin-right: auto;
 }

@@ -85,8 +85,18 @@
 /* responsive design */
 
 @media (max-width: 768px) {
-	.product_flexed {
-		display: flex;
-		flex-direction: column;
+	.products_container {
+		grid-template-columns: 1fr 1fr;
+		padding: 0 auto;
+	}
+	.card_container {
+		min-width: 200px;
+		margin: 20px;
+	}
+}
+
+@media (max-width: 540px) {
+	.products_container {
+		grid-template-columns: 1fr;
 	}
 }

@@ -1,6 +1,6 @@
 import React, {useState, useContext} from "react";
 import styles from "./Auth.module.css";
-import {Link, useNavigate} from "react-router";
+import {Link, useNavigate, useLocation} from "react-router";
 import {Type} from "../../Utility/action.type";
 import {ClipLoader} from "react-spinners";
 import {auth} from "../../Utility/firebase";
@@ -21,6 +21,8 @@ const Auth = () => {
 
 	const [{user}, dispatch] = useContext(DataContext);
 	const navigate = useNavigate();
+	const navStateData = useLocation();
+	console.log(navStateData);
 
 	// console.log(user);
 
@@ -36,7 +38,8 @@ const Auth = () => {
 						user: userInfo.user,
 					});
 					setLoading({...loading, signIn: false});
-					navigate("/");
+					navigate(navStateData?.state?.redirect || "/");
+
 					console.log(userInfo);
 				})
 				.catch((err) => {
@@ -52,7 +55,7 @@ const Auth = () => {
 						user: userInfo.user,
 					});
 					setLoading({...loading, signUp: false});
-					navigate("/");
+					navigate(navStateData?.state?.redirect || "/");
 
 					console.log(userInfo);
 				})
@@ -72,6 +75,18 @@ const Auth = () => {
 			</Link>
 			<div className={styles.login_container}>
 				<h1>Sign In</h1>
+				{navStateData?.state?.msg && (
+					<small
+						style={{
+							padding: "5px",
+							textAlign: "center",
+							color: "red",
+							fontWeight: "bold",
+						}}
+					>
+						{navStateData.state.msg}
+					</small>
+				)}
 				<form action="" method="post">
 					<div>
 						<label htmlFor="email">Email</label>
